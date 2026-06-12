@@ -1,0 +1,299 @@
+@media (max-width: 1180px) {
+  nav {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu a {
+    flex: 0 0 auto;
+  }
+
+  .lang-switch {
+    margin-left: auto;
+  }
+
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(320px, .72fr);
+    min-height: auto;
+  }
+
+  .photo-wrap {
+    width: min(100%, 560px);
+    height: 610px;
+  }
+
+  .photo-wrap::before {
+    width: 500px;
+    height: 500px;
+  }
+
+  .photo-wrap::after {
+    width: 540px;
+    height: 540px;
+  }
+
+  .side-info {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding-top: 0;
+  }
+
+  .focus-strip,
+  .service-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  body {
+    padding: 18px;
+  }
+
+  nav {
+    top: 8px;
+    margin-bottom: 28px;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    min-height: auto;
+    padding-top: 4px;
+  }
+
+  .hero > div:first-child {
+    order: 1;
+  }
+
+  .photo-wrap {
+    order: 2;
+    height: 500px;
+    min-height: 0;
+    align-items: center;
+  }
+
+  .side-info {
+    order: 3;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  h1 {
+    font-size: 58px;
+    line-height: .95;
+  }
+
+  .hero-subtitle {
+    font-size: 28px;
+  }
+
+  .focus-strip,
+  .service-grid,
+  .bottom-grid,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card,
+  .focus-card {
+    min-height: auto;
+  }
+
+  .section-heading h2 {
+    font-size: 34px;
+  }
+
+  .quote-card {
+    align-items: flex-start;
+    gap: 18px;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 10px;
+  }
+
+  nav {
+    border-radius: 14px;
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-cta {
+    padding: 12px 14px;
+    min-height: 42px;
+    font-size: 13px;
+  }
+
+  .lang-switch {
+    order: 2;
+    margin-left: 0;
+  }
+
+  .lang-switch button {
+    width: 34px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .menu {
+    gap: 6px;
+  }
+
+  .menu a {
+    padding: 9px 11px;
+    font-size: 13px;
+  }
+
+  .tag {
+    margin-bottom: 22px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+
+  .hero-subtitle {
+    font-size: 21px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-pills span {
+    width: 100%;
+  }
+
+  .actions {
+    gap: 10px;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+
+  .stats,
+  .side-info {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    min-height: auto;
+  }
+
+  .photo-wrap {
+    height: 340px;
+    min-height: 0;
+  }
+
+  .photo {
+    width: min(82vw, 280px);
+  }
+
+  .photo-wrap::before {
+    width: 280px;
+    height: 280px;
+  }
+
+  .photo-wrap::after {
+    width: 300px;
+    height: 300px;
+  }
+
+  .card,
+  .exp-card,
+  .info-box,
+  .contact-card,
+  .focus-card,
+  .service-card,
+  .diploma-info {
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .journey h2,
+  .section-heading h2,
+  .diploma-head h2 {
+    font-size: 30px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .diploma-head {
+    gap: 16px;
+  }
+
+  .diploma-controls {
+    width: 100%;
+  }
+
+  .diploma-controls button {
+    flex: 1;
+    min-height: 48px;
+  }
+
+  .diploma-preview {
+    height: 300px;
+    padding: 10px;
+  }
+
+  .diploma-thumbs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .diploma-thumbs img {
+    height: 110px;
+  }
+
+  .quote-mark,
+  .quote-logo {
+    font-size: 42px;
+  }
+
+  .quote-card p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  .btn {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .diploma-thumbs img {
+    height: 96px;
+  }
+}

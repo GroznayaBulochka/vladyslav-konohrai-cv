@@ -1,0 +1,148 @@
+vk-icon {
+  width: 1.25em;
+  height: 1.25em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #9b6cff;
+  flex: 0 0 auto;
+  line-height: 1;
+  vertical-align: -.18em;
+}
+
+vk-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 7px rgba(145, 96, 255, .34));
+}
+
+.btn vk-icon {
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+  color: currentColor;
+}
+
+.hero-pills vk-icon,
+.info-box vk-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.info-box b {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat vk-icon {
+  width: 26px;
+  height: 26px;
+  margin-bottom: 12px;
+  color: #9b6cff;
+}
+
+.orbit-item vk-icon {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  border-radius: 50%;
+  background: rgba(122, 88, 255, .13);
+  border: 1px solid rgba(154, 124, 255, .42);
+  color: #9b6cff;
+}
+
+.focus-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.focus-top vk-icon {
+  width: 34px;
+  height: 34px;
+  color: #9b6cff;
+}
+
+.icon vk-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.point:last-child .icon vk-icon {
+  color: #fff;
+}
+
+.strength {
+  gap: 10px;
+}
+
+.strength vk-icon {
+  width: 28px;
+  height: 28px;
+  color: #9b6cff;
+}
+
+.strength span {
+  display: block;
+}
+
+.service-icon vk-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.exp-card .icon {
+  margin: 0 0 18px;
+}
+
+.exp-card .icon vk-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.timeline-item span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.timeline-item vk-icon,
+.cert vk-icon {
+  width: 18px;
+  height: 18px;
+}
+
+.cert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-card > vk-icon {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 14px;
+}
+
+.quote-logo {
+  text-shadow: 0 0 18px rgba(154, 124, 255, .46);
+}
+
+@media (max-width: 640px) {
+  .orbit-item vk-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stat vk-icon,
+  .contact-card > vk-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
