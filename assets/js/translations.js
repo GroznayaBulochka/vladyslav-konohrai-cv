@@ -11,6 +11,7 @@ const translations = {
     lang: "pl",
     title: "Vladyslav Konohrai — CV",
     attrs: [
+      [".menu-toggle", "aria-label", "Menu"],
       [".lang-switch", "aria-label", "Wybierz język strony"],
       ["nav", "aria-label", "Główna nawigacja"],
       ["[data-diploma-prev]", "aria-label", "Poprzedni dyplom"],

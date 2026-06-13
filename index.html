@@ -124,7 +124,13 @@
   <img src="logocv.svg" alt="Vladyslav Konohrai logo">
 </a>
 
-    <div class="menu">
+    <button class="menu-toggle" type="button" aria-label="Menu" aria-controls="main-menu" aria-expanded="false">
+      <span class="menu-toggle-label">Menu</span>
+      <vk-icon class="menu-icon-open" name="menu"></vk-icon>
+      <vk-icon class="menu-icon-close" name="x"></vk-icon>
+    </button>
+
+    <div class="menu" id="main-menu">
       <a href="#about">O mnie</a>
       <a href="#services">Zakres</a>
       <a href="#experience">Doświadczenie</a>
@@ -577,6 +583,7 @@
 <script src="assets/js/diplomas-data.js" defer></script>
 <script src="assets/js/icons.js" defer></script>
 <script src="assets/js/translations.js" defer></script>
+<script src="assets/js/mobile-menu.js" defer></script>
 <script src="assets/js/diploma-gallery.js" defer></script>
 </body>
 </html>

@@ -109,6 +109,52 @@ nav {
   background: rgba(255,255,255,.055);
 }
 
+.menu-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 44px;
+  padding: 11px 15px;
+  border: 1px solid rgba(154, 124, 255, .26);
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(255,255,255,.055);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .22s ease, border-color .22s ease, background .22s ease;
+}
+
+.menu-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(154, 124, 255, .5);
+  background: rgba(154, 92, 255, .18);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid rgba(98, 217, 255, .72);
+  outline-offset: 2px;
+}
+
+.menu-toggle vk-icon {
+  width: 18px;
+  height: 18px;
+  color: currentColor;
+}
+
+.menu-icon-close {
+  display: none;
+}
+
+nav.menu-open .menu-icon-open {
+  display: none;
+}
+
+nav.menu-open .menu-icon-close {
+  display: inline-flex;
+}
+
 .lang-switch {
   display: inline-flex;
   align-items: center;

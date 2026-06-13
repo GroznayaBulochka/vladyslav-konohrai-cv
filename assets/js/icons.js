@@ -19,6 +19,7 @@ const iconPaths = {
   "heart-handshake": '<path d="M12 21s-7-4.6-9-9.2C1.7 8.9 3.2 6 6.2 6c1.7 0 3 1 3.8 2.1C10.8 7 12.1 6 13.8 6c3 0 4.5 2.9 3.2 5.8C15 16.4 12 21 12 21z"></path><path d="M8 13h3l2 2 3-3"></path>',
   linkedin: '<rect x="4" y="4" width="16" height="16" rx="2"></rect><path d="M8 11v5"></path><path d="M8 8v.01"></path><path d="M12 16v-5"></path><path d="M12 13a2 2 0 0 1 4 0v3"></path>',
   mail: '<rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="m3 7 9 6 9-6"></path>',
+  menu: '<path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path>',
   "map-pin": '<path d="M12 21s7-5.4 7-12A7 7 0 0 0 5 9c0 6.6 7 12 7 12z"></path><circle cx="12" cy="9" r="2.5"></circle>',
   message: '<path d="M4 5h16v11H8l-4 4V5z"></path><path d="M8 9h8"></path><path d="M8 13h5"></path>',
   navigation: '<path d="m12 3 8 18-8-4-8 4 8-18z"></path><path d="M12 3v14"></path>',
@@ -31,7 +32,8 @@ const iconPaths = {
   store: '<path d="M4 10h16l-1-5H5l-1 5z"></path><path d="M5 10v10h14V10"></path><path d="M9 20v-6h6v6"></path><path d="M4 10c0 2 4 2 4 0 0 2 4 2 4 0 0 2 4 2 4 0 0 2 4 2 4 0"></path>',
   target: '<circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="4"></circle><path d="M15 9l4-4"></path><path d="M19 5h-3V2"></path>',
   utensils: '<path d="M7 3v8"></path><path d="M4 3v4a3 3 0 0 0 6 0V3"></path><path d="M7 11v10"></path><path d="M16 3v18"></path><path d="M16 3c3 2 4 5 3 8h-3"></path>',
-  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.2a4 4 0 0 1 0 7.6"></path>'
+  users: '<path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.9"></path><path d="M16 3.2a4 4 0 0 1 0 7.6"></path>',
+  x: '<path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>'
 };
 
 class VkIcon extends HTMLElement {
