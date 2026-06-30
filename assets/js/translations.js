@@ -9,7 +9,7 @@ const emailBox = {
 const translations = {
   pl: {
     lang: "pl",
-    title: "Vladyslav Konohrai — CV",
+    title: "Vladyslav Konohrai | CV – psychologia i BHP",
     attrs: [
       [".menu-toggle", "aria-label", "Menu"],
       [".lang-switch", "aria-label", "Wybierz język strony"],
@@ -91,7 +91,7 @@ const translations = {
   },
   en: {
     lang: "en",
-    title: "Vladyslav Konohrai — CV",
+    title: "Vladyslav Konohrai | CV – Psychology & Safety",
     attrs: [
       [".lang-switch", "aria-label", "Choose page language"],
       ["nav", "aria-label", "Main navigation"],
@@ -172,7 +172,7 @@ const translations = {
   },
   ru: {
     lang: "ru",
-    title: "Владислав Конохрай — CV",
+    title: "Владислав Конохрай | CV – психология и безопасность",
     attrs: [
       [".lang-switch", "aria-label", "Выберите язык страницы"],
       ["nav", "aria-label", "Главная навигация"],
