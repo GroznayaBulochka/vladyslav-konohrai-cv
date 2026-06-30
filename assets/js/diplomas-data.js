@@ -46,5 +46,11 @@ window.diplomas = [
     desc: "Certyfikat ukończenia kursu z zakresu umiejętności interpersonalnych.",
     img: "dyplomy/UmiejętnościinterpersonalneDyp.jpg",
     pdf: "dyplomy/UmiejętnościinterpersonalneDyp.pdf"
+  },
+  {
+    title: "Polski język migowy A1",
+    desc: "Certyfikat potwierdzający znajomość podstaw polskiego języka migowego na poziomie A1.",
+    img: "dyplomy/MigowyA1.jpg",
+    pdf: "dyplomy/MigowyA1.pdf"
   }
 ];

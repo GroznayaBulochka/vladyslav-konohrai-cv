@@ -1,29 +1,28 @@
-@media (max-width: 1180px) {
+@media (max-width: 1360px) {
   nav {
-    align-items: stretch;
-    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .menu {
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    scrollbar-width: none;
-  }
-
-  .menu::-webkit-scrollbar {
-    display: none;
+    flex: 1;
+    min-width: 0;
+    flex-wrap: nowrap;
+    gap: 2px;
+    font-size: 13px;
   }
 
   .menu a {
-    flex: 0 0 auto;
+    padding: 9px 7px;
+    white-space: nowrap;
   }
 
-  .lang-switch {
-    margin-left: auto;
+  .lang-switch button {
+    width: 34px;
+  }
+
+  .nav-cta {
+    padding-right: 17px;
+    padding-left: 17px;
   }
 
   .hero {
@@ -52,10 +51,108 @@
     grid-template-columns: repeat(4, 1fr);
     padding-top: 0;
   }
+}
+
+@media (max-width: 1180px) {
+  main > section[id] {
+    scroll-margin-top: 148px;
+  }
+
+  nav {
+    align-items: stretch;
+    flex-wrap: wrap;
+  }
+
+  .menu {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+
+  .menu::-webkit-scrollbar {
+    display: none;
+  }
+
+  .menu a {
+    flex: 0 0 auto;
+  }
+
+  .lang-switch {
+    margin-left: auto;
+  }
 
   .focus-strip,
   .service-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .journey {
+    grid-template-columns: 300px repeat(5, minmax(118px, 1fr));
+    column-gap: 10px;
+  }
+
+  .journey::before,
+  .journey .path-bg {
+    left: 304px;
+  }
+
+  .journey::after {
+    left: 328px;
+  }
+
+  .journey h2 {
+    font-size: 36px;
+  }
+
+  .point b,
+  .point small {
+    max-width: 160px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .hero,
+  .bottom-grid,
+  .contact {
+    grid-template-columns: 1fr;
+  }
+
+  .hero > div:first-child {
+    order: 1;
+  }
+
+  .photo-wrap {
+    order: 2;
+    height: 680px;
+  }
+
+  .photo {
+    width: min(68vw, 440px);
+  }
+
+  .side-info {
+    order: 3;
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .experience,
+  .strengths,
+  .stats,
+  .certs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact .contact-card:first-child {
+    grid-column: auto;
+  }
+
+  h1 {
+    font-size: 64px;
   }
 }
 
@@ -70,27 +167,18 @@
   }
 
   .hero {
-    display: grid;
-    grid-template-columns: 1fr;
     gap: 24px;
     min-height: auto;
     padding-top: 4px;
   }
 
-  .hero > div:first-child {
-    order: 1;
-  }
-
   .photo-wrap {
-    order: 2;
-    height: 500px;
+    height: 590px;
     min-height: 0;
-    align-items: center;
   }
 
-  .side-info {
-    order: 3;
-    grid-template-columns: repeat(2, 1fr);
+  .photo {
+    width: min(68vw, 400px);
   }
 
   h1 {
@@ -103,9 +191,7 @@
   }
 
   .focus-strip,
-  .service-grid,
-  .bottom-grid,
-  .contact {
+  .service-grid {
     grid-template-columns: 1fr;
   }
 
@@ -118,189 +204,113 @@
     font-size: 34px;
   }
 
+  .diploma-head,
+  .diploma-viewer {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .diploma-thumbs {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .diploma-preview {
+    height: 360px;
+  }
+
   .quote-card {
     align-items: flex-start;
     gap: 18px;
     flex-direction: column;
   }
-}
 
-@media (max-width: 640px) {
-  body {
-    padding: 10px;
-  }
-
-  nav {
-    border-radius: 14px;
-    padding: 10px;
-  }
-
-  .logo img {
-    width: 42px;
-    height: 42px;
-  }
-
-  .nav-cta {
-    padding: 12px 14px;
-    min-height: 42px;
-    font-size: 13px;
-  }
-
-  .lang-switch {
-    order: 2;
-    margin-left: 0;
-  }
-
-  .lang-switch button {
-    width: 34px;
-    height: 32px;
-    font-size: 12px;
-  }
-
-  .menu {
-    gap: 6px;
-  }
-
-  .menu a {
-    padding: 9px 11px;
-    font-size: 13px;
-  }
-
-  .tag {
-    margin-bottom: 22px;
-    font-size: 12px;
-  }
-
-  h1 {
-    font-size: 42px;
-    margin-bottom: 18px;
-  }
-
-  .hero-subtitle {
-    font-size: 21px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .hero-pills span {
-    width: 100%;
-  }
-
-  .actions {
-    gap: 10px;
-  }
-
-  .actions .btn {
-    width: 100%;
-  }
-
-  .stats,
-  .side-info {
+  .journey {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 24px 18px;
   }
 
-  .stat {
+  .journey::before,
+  .journey::after,
+  .journey .path-bg {
+    display: none;
+  }
+
+  .journey-intro {
     min-height: auto;
-  }
-
-  .photo-wrap {
-    height: clamp(455px, 122vw, 500px);
-    min-height: 0;
-    align-items: end;
-    margin-bottom: 10px;
-  }
-
-  .photo {
-    width: min(82vw, 280px);
-  }
-
-  .photo-wrap::before {
-    width: 280px;
-    height: 280px;
-  }
-
-  .photo-wrap::after {
-    width: 300px;
-    height: 300px;
-  }
-
-  .card,
-  .exp-card,
-  .info-box,
-  .contact-card,
-  .focus-card,
-  .service-card,
-  .diploma-info {
-    border-radius: 14px;
-    padding: 18px;
+    padding: 0;
   }
 
   .journey h2,
-  .section-heading h2,
-  .diploma-head h2 {
-    font-size: 30px;
+  .journey p {
+    max-width: none;
   }
 
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-
-  .diploma-head {
-    gap: 16px;
-  }
-
-  .diploma-controls {
+  .journey .btn {
     width: 100%;
+    margin-top: 0;
   }
 
-  .diploma-controls button {
-    flex: 1;
-    min-height: 48px;
+  .point,
+  .point:nth-of-type(3),
+  .point:nth-of-type(4),
+  .point:nth-of-type(5),
+  .point:nth-of-type(6),
+  .point:nth-of-type(7) {
+    grid-column: 1;
+    min-height: auto;
+    grid-template-columns: 82px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 14px;
+    justify-items: start;
+    text-align: left;
   }
 
-  .diploma-preview {
-    height: 300px;
-    padding: 10px;
+  .year {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
   }
 
-  .diploma-thumbs {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+  .point .icon {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 8px;
   }
 
-  .diploma-thumbs img {
-    height: 110px;
+  .point .icon::after,
+  .point::before,
+  .point:last-child::after {
+    display: none;
   }
 
-  .quote-mark,
-  .quote-logo {
-    font-size: 42px;
+  .point b,
+  .point small {
+    grid-column: 2;
+    width: 100%;
+    max-width: none;
   }
 
-  .quote-card p {
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 380px) {
-  h1 {
-    font-size: 38px;
+  .point b {
+    grid-row: 1;
   }
 
-  .btn {
-    padding-left: 16px;
-    padding-right: 16px;
-  }
-
-  .diploma-thumbs img {
-    height: 96px;
+  .point small {
+    grid-row: 2;
+    min-height: auto;
   }
 }
 
 @media (max-width: 768px) {
+  main > section[id] {
+    scroll-margin-top: 205px;
+  }
+
+  body {
+    padding-bottom: 96px;
+  }
+
   nav {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -352,14 +362,9 @@
     transform: translateY(-8px);
     border: 1px solid transparent;
     border-radius: 14px;
-    background: rgba(4, 8, 20, .9);
+    background: rgba(4, 8, 20, .94);
     box-shadow: 0 18px 42px rgba(0,0,0,.28);
-    transition:
-      max-height .28s ease,
-      opacity .22s ease,
-      transform .22s ease,
-      padding .22s ease,
-      border-color .22s ease;
+    transition: max-height .28s ease, opacity .22s ease, transform .22s ease, padding .22s ease, border-color .22s ease;
   }
 
   nav.menu-open .menu {
@@ -368,7 +373,7 @@
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
-    border-color: rgba(154, 124, 255, .2);
+    border-color: rgba(var(--accent-rgb), .25);
   }
 
   .menu a {
@@ -387,8 +392,229 @@
 
   .menu a::after {
     content: ">";
-    color: #9b6cff;
+    color: var(--accent);
     font-weight: 900;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  .hero-subtitle {
+    font-size: 22px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .photo-wrap {
+    height: 560px;
+  }
+
+  .photo {
+    width: min(76vw, 340px);
+  }
+
+  .orbit-item {
+    display: none;
+  }
+
+  .experience,
+  .strengths,
+  .certs {
+    grid-template-columns: 1fr;
+  }
+
+  .floating-actions {
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    border-radius: 18px;
+  }
+
+  .floating-actions a,
+  .floating-actions button {
+    width: auto;
+    height: auto;
+    min-width: 0;
+    min-height: 46px;
+  }
+
+  .floating-actions span {
+    position: static;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .copy-toast {
+    bottom: 82px;
+  }
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 10px;
+  }
+
+  nav {
+    border-radius: 14px;
+    padding: 10px;
+  }
+
+  .logo img {
+    width: 42px;
+    height: 42px;
+  }
+
+  .nav-cta {
+    padding: 12px 14px;
+    min-height: 42px;
+    font-size: 13px;
+  }
+
+  .lang-switch button {
+    width: 34px;
+    height: 32px;
+    font-size: 12px;
+  }
+
+  .menu {
+    gap: 6px;
+  }
+
+  .menu a {
+    padding: 9px 11px;
+    font-size: 13px;
+  }
+
+  .tag {
+    margin-bottom: 22px;
+    font-size: 12px;
+  }
+
+  h1 {
+    font-size: 42px;
+    margin-bottom: 18px;
+  }
+
+  .hero-subtitle {
+    font-size: 21px;
+  }
+
+  .hero-pills span {
+    width: 100%;
+  }
+
+  .actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .actions .btn {
+    width: 100%;
+  }
+
+  .stats,
+  .side-info {
+    grid-template-columns: 1fr;
+  }
+
+  .stat {
+    min-height: auto;
+  }
+
+  .photo-wrap {
+    height: clamp(465px, 128vw, 520px);
+    margin-bottom: 10px;
+  }
+
+  .photo {
+    width: min(82vw, 300px);
+  }
+
+  .photo-wrap::before {
+    width: 310px;
+    height: 310px;
+  }
+
+  .photo-wrap::after {
+    width: 330px;
+    height: 330px;
+  }
+
+  .card,
+  .exp-card,
+  .info-box,
+  .contact-card,
+  .focus-card,
+  .service-card,
+  .diploma-info {
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .journey h2,
+  .section-heading h2,
+  .diploma-head h2 {
+    font-size: 30px;
+  }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .diploma-head {
+    gap: 16px;
+  }
+
+  .diploma-controls {
+    width: 100%;
+  }
+
+  .diploma-controls button {
+    flex: 1;
+    min-height: 48px;
+  }
+
+  .diploma-preview {
+    height: 300px;
+    padding: 10px;
+  }
+
+  .diploma-thumbs {
+    gap: 10px;
+  }
+
+  .diploma-thumbs img {
+    height: 110px;
+  }
+
+  .quote-mark,
+  .quote-logo {
+    font-size: 42px;
+  }
+
+  .quote-card p {
+    font-size: 16px;
+  }
+
+  .orbit-item vk-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .stat vk-icon,
+  .contact-card > vk-icon {
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -413,5 +639,20 @@
 
   .menu {
     grid-row: 4;
+  }
+}
+
+@media (max-width: 380px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  .btn {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .diploma-thumbs img {
+    height: 96px;
   }
 }

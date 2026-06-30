@@ -43,6 +43,12 @@
   box-shadow: 0 0 24px rgba(130, 92, 255, .35);
 }
 
+.diploma-controls button[aria-pressed="true"] {
+  border-color: rgba(101, 224, 163, .36);
+  background: rgba(101, 224, 163, .12);
+  box-shadow: 0 0 26px rgba(101, 224, 163, .18);
+}
+
 .diploma-controls button:focus-visible,
 .diploma-thumbs img:focus-visible {
   outline: 3px solid rgba(98, 217, 255, .65);
@@ -91,50 +97,10 @@
   letter-spacing: .08em;
 }
 
-.hero-subtitle {
-  font-size: 32px;
-  line-height: 1.2;
-  color: #c5a7ff;
-  margin-bottom: 22px;
-}
-
 .diploma-info h3 {
   font-size: 30px;
   margin: 18px 0 14px;
 }
-
-.orbit-item {
-  position: absolute;
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 800;
-  z-index: 3;
-  width: 88px;
-  display: grid;
-  justify-items: center;
-  gap: 6px;
-  transform: translate(-50%, -50%);
-}
-
-@media (max-width: 768px) {
-
-  .orbit-item {
-    display: none;
-  }
-
-}
-
-.orbit-item span {
-  display: block;
-  margin-top: 0;
-  font-size: 13px;
-}
-
-.orbit-1 { top: 17%; left: 22%; }
-.orbit-2 { top: 19%; left: 78%; }
-.orbit-3 { top: 82%; left: 22%; }
-.orbit-4 { top: 82%; left: 78%; }
 
 .diploma-info p {
   color: #bfc5d8;
@@ -144,7 +110,7 @@
 
 .diploma-thumbs {
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
   gap: 14px;
   margin-top: 24px;
 }
@@ -166,85 +132,4 @@
   border-color: #9a7cff;
   box-shadow: 0 0 25px rgba(122, 88, 255, .35);
   transform: translateY(-3px);
-}
-
-@media (max-width: 900px) {
-  .diploma-head,
-  .diploma-viewer {
-    grid-template-columns: 1fr;
-    display: grid;
-  }
-
-  .diploma-thumbs {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .diploma-preview {
-    height: 360px;
-  }
-}
-
-@media (max-width: 600px) {
-  body {
-    padding: 16px;
-  }
-
-  .experience,
-  .strengths,
-  .stats,
-  .certs {
-    grid-template-columns: 1fr;
-  }
-
-  .actions {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 768px) {
-
-  body {
-    padding: 12px;
-  }
-
-  .card,
-  .exp-card,
-  .info-box,
-  .contact-card {
-    padding: 18px;
-  }
-
-  h1 {
-    font-size: 48px;
-    letter-spacing: 0;
-  }
-
-  .hero-subtitle {
-    font-size: 22px;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .photo {
-    width: 280px;
-  }
-
-  .orbit-item {
-    display: none;
-  }
-
-  .stats,
-  .strengths,
-  .experience,
-  .certs,
-  .contact,
-  .bottom-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .diploma-thumbs {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }

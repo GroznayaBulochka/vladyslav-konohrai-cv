@@ -54,11 +54,11 @@ const translations = {
       "#diplomaPdf": `Otwórz dyplom ${icon("external-link")}`,
       ".contact-link:nth-of-type(1)": `${icon("mail")}<br><b>v.konohrai.work@gmail.com</b><br><small>Napisz do mnie</small>`,
       ".contact-link:nth-of-type(2)": `${icon("phone")}<br><b>+48 739-64-22-77</b><br><small>Zadzwoń</small>`,
-      ".contact .contact-card:nth-child(4)": `${icon("map-pin")}<br><b>Jurija Gagarina 19</b><br><small>87-100 Toruń</small>`,
-      ".contact .contact-card:nth-child(5)": `${icon("linkedin")}<br><b>LinkedIn</b><br><small>Zobacz mój profil</small>`
+      ".contact-location": `${icon("map-pin")}<br><b>Jurija Gagarina 19</b><br><small>87-100 Toruń</small>`,
+      ".contact-social": `${icon("linkedin")}<br><b>LinkedIn</b><br><small>Zobacz mój profil</small>`
     },
     lists: [
-      [".menu a", ["O mnie", "Zakres", "Doświadczenie", "Edukacja", "Umiejętności", "Osiągnięcia", "Kontakt"]],
+      [".menu a", ["O mnie", "Umiejętności", "Zakres", "Doświadczenie", "Edukacja", "Osiągnięcia", "Kontakt"]],
       [".hero-pills span", [`${icon("shield")} Inspektor BHP`, `${icon("brain")} Psychologia UMK`, `${icon("clipboard-check")} Organizacja pracy`, `${icon("map-pin")} Toruń`], true],
       [".stat small", ["lat doświadczenia", "kierunki edukacji", "języków", "certyfikatów"]],
       [".orbit-item span", ["Psychology", "Leadership", "Analysis", "Safety"]],
@@ -135,11 +135,11 @@ const translations = {
       "#diplomaPdf": `Open certificate ${icon("external-link")}`,
       ".contact-link:nth-of-type(1)": `${icon("mail")}<br><b>v.konohrai.work@gmail.com</b><br><small>Write to me</small>`,
       ".contact-link:nth-of-type(2)": `${icon("phone")}<br><b>+48 739-64-22-77</b><br><small>Call me</small>`,
-      ".contact .contact-card:nth-child(4)": `${icon("map-pin")}<br><b>Jurija Gagarina 19</b><br><small>87-100 Toruń</small>`,
-      ".contact .contact-card:nth-child(5)": `${icon("linkedin")}<br><b>LinkedIn</b><br><small>View my profile</small>`
+      ".contact-location": `${icon("map-pin")}<br><b>Jurija Gagarina 19</b><br><small>87-100 Toruń</small>`,
+      ".contact-social": `${icon("linkedin")}<br><b>LinkedIn</b><br><small>View my profile</small>`
     },
     lists: [
-      [".menu a", ["About", "Scope", "Experience", "Education", "Skills", "Achievements", "Contact"]],
+      [".menu a", ["About", "Skills", "Scope", "Experience", "Education", "Achievements", "Contact"]],
       [".hero-pills span", [`${icon("shield")} OHS inspector`, `${icon("brain")} Psychology at UMK`, `${icon("clipboard-check")} Work organization`, `${icon("map-pin")} Toruń`], true],
       [".stat small", ["years of experience", "education paths", "languages", "certificates"]],
       [".orbit-item span", ["Psychology", "Leadership", "Analysis", "Safety"]],
@@ -216,11 +216,11 @@ const translations = {
       "#diplomaPdf": `Открыть диплом ${icon("external-link")}`,
       ".contact-link:nth-of-type(1)": `${icon("mail")}<br><b>v.konohrai.work@gmail.com</b><br><small>Написать мне</small>`,
       ".contact-link:nth-of-type(2)": `${icon("phone")}<br><b>+48 739-64-22-77</b><br><small>Позвонить</small>`,
-      ".contact .contact-card:nth-child(4)": `${icon("map-pin")}<br><b>Jurija Gagarina 19</b><br><small>87-100 Торунь</small>`,
-      ".contact .contact-card:nth-child(5)": `${icon("linkedin")}<br><b>LinkedIn</b><br><small>Посмотреть профиль</small>`
+      ".contact-location": `${icon("map-pin")}<br><b>Jurija Gagarina 19</b><br><small>87-100 Торунь</small>`,
+      ".contact-social": `${icon("linkedin")}<br><b>LinkedIn</b><br><small>Посмотреть профиль</small>`
     },
     lists: [
-      [".menu a", ["Обо мне", "Направления", "Опыт", "Образование", "Навыки", "Достижения", "Контакт"]],
+      [".menu a", ["Обо мне", "Навыки", "Направления", "Опыт", "Образование", "Достижения", "Контакт"]],
       [".hero-pills span", [`${icon("shield")} Инспектор ОТ`, `${icon("brain")} Психология UMK`, `${icon("clipboard-check")} Организация работы`, `${icon("map-pin")} Торунь`], true],
       [".stat small", ["лет опыта", "направления образования", "языков", "сертификатов"]],
       [".orbit-item span", ["Психология", "Лидерство", "Анализ", "Безопасность"]],
@@ -252,6 +252,81 @@ const translations = {
     ]
   }
 };
+
+translations.pl.text[".menu-toggle-label"] = "Menu";
+translations.en.text[".menu-toggle-label"] = "Menu";
+translations.ru.text[".menu-toggle-label"] = "Меню";
+
+translations.en.attrs.unshift([".menu-toggle", "aria-label", "Menu"]);
+translations.ru.attrs.unshift([".menu-toggle", "aria-label", "Меню"]);
+
+translations.pl.lists.find(([selector]) => selector === ".cert")?.[1].splice(
+  8,
+  0,
+  `${icon("message")} Polski język migowy A1`
+);
+translations.en.lists.find(([selector]) => selector === ".cert")?.[1].splice(
+  8,
+  0,
+  `${icon("message")} Polish Sign Language A1`
+);
+translations.ru.lists.find(([selector]) => selector === ".cert")?.[1].splice(
+  8,
+  0,
+  `${icon("message")} Польский жестовый язык A1`
+);
+
+translations.pl.diplomas.push([
+  "Polski język migowy A1",
+  "Certyfikat potwierdzający znajomość podstaw polskiego języka migowego na poziomie A1."
+]);
+translations.en.diplomas.push([
+  "Polish Sign Language A1",
+  "Certificate confirming basic Polish Sign Language skills at A1 level."
+]);
+translations.ru.diplomas.push([
+  "Польский жестовый язык A1",
+  "Сертификат, подтверждающий базовое знание польского жестового языка на уровне A1."
+]);
+
+Object.assign(translations.pl.html, {
+  ".contact-copy-email": `${icon("copy")}<br><b>Skopiuj e-mail</b><br><small>v.konohrai.work@gmail.com</small>`,
+  ".contact-copy-phone": `${icon("copy")}<br><b>Skopiuj telefon</b><br><small>+48 739-64-22-77</small>`,
+  ".floating-actions a[href='#contact']": `${icon("mail")}<span>Kontakt</span>`,
+  ".floating-actions a[download]": `${icon("download")}<span>CV</span>`,
+  "[data-scroll-top]": `${icon("arrow-up")}<span>Góra</span>`
+});
+
+Object.assign(translations.en.html, {
+  ".contact-copy-email": `${icon("copy")}<br><b>Copy e-mail</b><br><small>v.konohrai.work@gmail.com</small>`,
+  ".contact-copy-phone": `${icon("copy")}<br><b>Copy phone</b><br><small>+48 739-64-22-77</small>`,
+  ".floating-actions a[href='#contact']": `${icon("mail")}<span>Contact</span>`,
+  ".floating-actions a[download]": `${icon("download")}<span>CV</span>`,
+  "[data-scroll-top]": `${icon("arrow-up")}<span>Top</span>`
+});
+
+Object.assign(translations.ru.html, {
+  ".contact-copy-email": `${icon("copy")}<br><b>Скопировать e-mail</b><br><small>v.konohrai.work@gmail.com</small>`,
+  ".contact-copy-phone": `${icon("copy")}<br><b>Скопировать телефон</b><br><small>+48 739-64-22-77</small>`,
+  ".floating-actions a[href='#contact']": `${icon("mail")}<span>Контакт</span>`,
+  ".floating-actions a[download]": `${icon("download")}<span>CV</span>`,
+  "[data-scroll-top]": `${icon("arrow-up")}<span>Вверх</span>`
+});
+
+translations.pl.attrs.push(
+  ["[data-diploma-autoplay]", "aria-label", "Automatyczne przewijanie dyplomów"],
+  ["[data-scroll-top]", "aria-label", "Do góry"]
+);
+
+translations.en.attrs.push(
+  ["[data-diploma-autoplay]", "aria-label", "Auto-play certificates"],
+  ["[data-scroll-top]", "aria-label", "Back to top"]
+);
+
+translations.ru.attrs.push(
+  ["[data-diploma-autoplay]", "aria-label", "Автоматическое переключение дипломов"],
+  ["[data-scroll-top]", "aria-label", "Наверх"]
+);
 
 let activeLanguage = "pl";
 
@@ -328,8 +403,10 @@ const applyLanguage = (language) => {
     button.setAttribute("aria-pressed", isActive ? "true" : "false");
   });
 
-  window.refreshDiploma?.();
   storage.set("siteLanguage", dictionary.lang);
+  document.dispatchEvent(new CustomEvent("languagechange", {
+    detail: { language: dictionary.lang }
+  }));
 };
 
 window.getLocalizedDiploma = (diploma) => {

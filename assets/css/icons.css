@@ -133,16 +133,3 @@ vk-icon svg {
 .quote-logo {
   text-shadow: 0 0 18px rgba(154, 124, 255, .46);
 }
-
-@media (max-width: 640px) {
-  .orbit-item vk-icon {
-    width: 28px;
-    height: 28px;
-  }
-
-  .stat vk-icon,
-  .contact-card > vk-icon {
-    width: 24px;
-    height: 24px;
-  }
-}

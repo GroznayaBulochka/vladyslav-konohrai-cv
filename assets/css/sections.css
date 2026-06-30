@@ -30,14 +30,6 @@
   gap: 16px;
 }
 
-@media (max-width: 768px) {
-
-  .experience {
-    grid-template-columns: 1fr;
-  }
-
-}
-
 .exp-card {
   padding: 24px;
   min-height: 250px;
@@ -125,14 +117,6 @@
   gap: 12px;
 }
 
-@media (max-width: 768px) {
-
-  .certs {
-    grid-template-columns: 1fr;
-  }
-
-}
-
 .cert {
   padding: 16px;
   border-radius: 10px;
@@ -211,17 +195,13 @@
 
 .contact {
   display: grid;
-  grid-template-columns: 1.2fr repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 18px;
   margin-top: 24px;
 }
 
-@media (max-width: 768px) {
-
-  .contact {
-    grid-template-columns: 1fr;
-  }
-
+.contact .contact-card:first-child {
+  grid-column: span 2;
 }
 
 .contact-card {
@@ -229,6 +209,13 @@
   color: white;
   text-decoration: none;
   min-width: 0;
+}
+
+.contact-copy {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
 }
 
 .contact-card h2 {
@@ -245,7 +232,8 @@
   transition: transform .22s ease, border-color .22s ease, background .22s ease;
 }
 
-.contact-link:hover {
+.contact-link:hover,
+.contact-copy:hover {
   transform: translateY(-3px);
   border-color: rgba(101, 224, 163, .24);
   background: rgba(101, 224, 163, .06);
@@ -280,37 +268,4 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-@media (max-width: 768px) {
-
-  .hero {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-  }
-
-  .side-info {
-    width: 100%;
-  }
-
-}
-
-@media (max-width: 1100px) {
-  .hero,
-  .bottom-grid,
-  .contact {
-    grid-template-columns: 1fr;
-  }
-
-  .experience,
-  .strengths,
-  .stats,
-  .certs {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  h1 {
-    font-size: 64px;
-  }
 }

@@ -10,8 +10,12 @@
     count: document.getElementById("diplomaCount"),
     thumbs: document.querySelectorAll(".diploma-thumbs img"),
     prevButton: document.querySelector("[data-diploma-prev]"),
-    nextButton: document.querySelector("[data-diploma-next]")
+    nextButton: document.querySelector("[data-diploma-next]"),
+    autoplayButton: document.querySelector("[data-diploma-autoplay]")
   });
+
+  let autoplayTimer;
+  let isAutoplayEnabled = false;
 
   const formatCount = (index) => {
     const current = String(index + 1).padStart(2, "0");
@@ -33,8 +37,14 @@
       : diplomas[currentDiploma];
 
     if (elements.image) {
-      elements.image.src = diploma.img;
+      elements.image.classList.remove("is-loaded");
       elements.image.alt = diploma.title;
+      elements.image.onload = () => elements.image.classList.add("is-loaded");
+      elements.image.src = diploma.img;
+
+      if (elements.image.complete) {
+        requestAnimationFrame(() => elements.image.classList.add("is-loaded"));
+      }
     }
 
     if (elements.title) {
@@ -64,6 +74,28 @@
   const prevDiploma = () => showDiploma(currentDiploma - 1);
   const refreshDiploma = () => showDiploma(currentDiploma);
 
+  const isGalleryVisible = () => {
+    const gallery = document.querySelector(".diploma-section");
+    const rect = gallery?.getBoundingClientRect();
+
+    return Boolean(rect && rect.top < window.innerHeight && rect.bottom > 0);
+  };
+
+  const setAutoplay = (enabled) => {
+    const elements = getElements();
+    isAutoplayEnabled = enabled;
+    clearInterval(autoplayTimer);
+
+    if (isAutoplayEnabled && !document.hidden) {
+      autoplayTimer = setInterval(nextDiploma, 4200);
+    }
+
+    if (elements.autoplayButton) {
+      elements.autoplayButton.setAttribute("aria-pressed", isAutoplayEnabled ? "true" : "false");
+      elements.autoplayButton.querySelector("vk-icon")?.setAttribute("name", isAutoplayEnabled ? "pause" : "play");
+    }
+  };
+
   const bindThumbs = (thumbs) => {
     thumbs.forEach((thumb, index) => {
       thumb.setAttribute("role", "button");
@@ -84,12 +116,34 @@
 
     elements.prevButton?.addEventListener("click", prevDiploma);
     elements.nextButton?.addEventListener("click", nextDiploma);
+    elements.autoplayButton?.addEventListener("click", () => setAutoplay(!isAutoplayEnabled));
+    document.addEventListener("keydown", (event) => {
+      const tagName = event.target?.tagName?.toLowerCase();
+
+      if (tagName === "input" || tagName === "textarea" || tagName === "button") {
+        return;
+      }
+
+      if (!isGalleryVisible()) {
+        return;
+      }
+
+      if (event.key === "ArrowLeft") {
+        prevDiploma();
+      }
+
+      if (event.key === "ArrowRight") {
+        nextDiploma();
+      }
+    });
     bindThumbs(elements.thumbs);
     showDiploma(currentDiploma);
   });
 
-  window.showDiploma = showDiploma;
-  window.nextDiploma = nextDiploma;
-  window.prevDiploma = prevDiploma;
-  window.refreshDiploma = refreshDiploma;
+  document.addEventListener("languagechange", refreshDiploma);
+  document.addEventListener("visibilitychange", () => {
+    if (isAutoplayEnabled) {
+      setAutoplay(true);
+    }
+  });
 })();
