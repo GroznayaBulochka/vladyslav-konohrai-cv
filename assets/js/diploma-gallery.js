@@ -1,6 +1,7 @@
 (() => {
-  const diplomas = window.diplomas || [];
   let currentDiploma = 0;
+
+  const getDiplomas = () => window.activeDiplomas || window.diplomas || [];
 
   const getElements = () => ({
     image: document.getElementById("diplomaImage"),
@@ -18,12 +19,15 @@
   let isAutoplayEnabled = false;
 
   const formatCount = (index) => {
+    const diplomas = getDiplomas();
     const current = String(index + 1).padStart(2, "0");
     const total = String(diplomas.length).padStart(2, "0");
     return `${current} / ${total}`;
   };
 
   const showDiploma = (index) => {
+    const diplomas = getDiplomas();
+
     if (!diplomas.length) {
       return;
     }
@@ -98,6 +102,11 @@
 
   const bindThumbs = (thumbs) => {
     thumbs.forEach((thumb, index) => {
+      if (thumb.dataset.diplomaBound === "true") {
+        return;
+      }
+
+      thumb.dataset.diplomaBound = "true";
       thumb.setAttribute("role", "button");
       thumb.tabIndex = 0;
 
@@ -141,6 +150,11 @@
   });
 
   document.addEventListener("languagechange", refreshDiploma);
+  document.addEventListener("diplomaschange", () => {
+    currentDiploma = 0;
+    bindThumbs(getElements().thumbs);
+    showDiploma(currentDiploma);
+  });
   document.addEventListener("visibilitychange", () => {
     if (isAutoplayEnabled) {
       setAutoplay(true);

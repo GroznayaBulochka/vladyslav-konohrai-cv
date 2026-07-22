@@ -1,18 +1,18 @@
 window.diplomas = [
   {
-    title: "Excel for Beginners Certificate",
+    title: "Excel dla początkujących",
     desc: "Certyfikat ukończenia kursu podstaw Excela.",
     img: "dyplomy/ExcelDyp.jpg",
     pdf: "dyplomy/ExcelDyp.pdf"
   },
   {
-    title: "Introduction to Figma",
-    desc: "Certyfikat ukończenia kursu wprowadzającego do Figma.",
+    title: "Wprowadzenie do Figmy",
+    desc: "Certyfikat ukończenia kursu wprowadzającego do Figmy.",
     img: "dyplomy/FigmaDyp.jpg",
     pdf: "dyplomy/FigmaDyp.pdf"
   },
   {
-    title: "Stock Investing: A Practical Course",
+    title: "Praktyczny kurs inwestowania w akcje",
     desc: "Certyfikat ukończenia praktycznego kursu inwestowania w akcje.",
     img: "dyplomy/InwestDyp1.jpg",
     pdf: "dyplomy/InwestDyp1.pdf"
@@ -24,7 +24,7 @@ window.diplomas = [
     pdf: "dyplomy/MenedzDyp.pdf"
   },
   {
-    title: "Photoshop for Beginners",
+    title: "Photoshop dla początkujących",
     desc: "Certyfikat ukończenia kursu podstaw Adobe Photoshop.",
     img: "dyplomy/PhotoshopDyp.jpg",
     pdf: "dyplomy/PhotoshopDyp.pdf"

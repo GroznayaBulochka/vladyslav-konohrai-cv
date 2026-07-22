@@ -50,6 +50,7 @@
 <link rel="stylesheet" href="assets/css/diplomas.css?v=20260630-1">
 <link rel="stylesheet" href="assets/css/icons.css?v=20260630-1">
 <link rel="stylesheet" href="assets/css/animations.css?v=20260630-1">
+<link rel="stylesheet" href="assets/css/job-personalizer.css?v=20260721-1">
 <link rel="stylesheet" href="assets/css/responsive.css?v=20260630-4">
 
 <script type="application/ld+json">
@@ -122,6 +123,36 @@
 <body>
 <div class="copy-toast" role="status" aria-live="polite"></div>
 <a class="skip-link" href="#main-content">Przejdź do treści</a>
+<div class="job-gate" data-job-gate role="dialog" aria-modal="true" aria-labelledby="jobGateTitle" aria-describedby="jobGateDesc" hidden>
+  <div class="job-gate-panel">
+    <div class="job-gate-kicker" data-job-gate-kicker>Dopasuj profil</div>
+    <h2 id="jobGateTitle" data-job-gate-title>Na jakie stanowisko szukasz pracownika?</h2>
+    <p id="jobGateDesc" data-job-gate-desc>Wybierz obszar, a strona od razu pokaże najważniejsze doświadczenia, umiejętności i dokumenty.</p>
+
+    <div class="job-choice-grid" role="group" aria-label="Obszary stanowiska" data-job-choice-grid>
+      <button class="job-choice" type="button" data-role-choice="production">
+        <vk-icon name="factory"></vk-icon>
+        <span>Produkcja i praca techniczna</span>
+        <small>Lakierowanie, śrutowanie, organizacja stanowiska i BHP.</small>
+      </button>
+      <button class="job-choice" type="button" data-role-choice="gastro">
+        <vk-icon name="utensils"></vk-icon>
+        <span>Gastronomia</span>
+        <small>Kuchnia, realizacja zamówień, obsługa klienta i praca pod presją czasu.</small>
+      </button>
+      <button class="job-choice" type="button" data-role-choice="office">
+        <vk-icon name="briefcase"></vk-icon>
+        <span>Biuro, administracja i BHP</span>
+        <small>Dokumentacja, procedury, kontakt z ludźmi i organizacja pracy.</small>
+      </button>
+      <button class="job-choice" type="button" data-role-choice="all">
+        <vk-icon name="sparkles"></vk-icon>
+        <span>Pełny profil</span>
+        <small>Wszystkie doświadczenia i szerszy obraz kompetencji.</small>
+      </button>
+    </div>
+  </div>
+</div>
 <div class="page">
 
   <nav aria-label="Główna nawigacja">
@@ -151,10 +182,10 @@
       <button type="button" data-lang="ru" aria-pressed="false">RU</button>
     </div>
 
-    <a class="btn nav-cta"
-   href="CV_Vladyslav_Konohrai.pdf"
+    <a class="btn nav-cta" data-cv-link
+   href="CV/CV_All_Vladyslav_Konohrai.pdf"
    target="_blank"
-   download="CV_Vladyslav_Konohrai.pdf">
+   download="CV_All_Vladyslav_Konohrai.pdf">
    Pobierz CV <vk-icon name="download"></vk-icon>
 </a>
   </nav>
@@ -168,8 +199,8 @@
       <h1>Vladyslav <span>Konohrai</span></h1>
 
         <h2 class="hero-subtitle">
-        Understanding people.<br>
-        Building safer environments.
+        Rozumiem ludzi.<br>
+        Buduję bezpieczniejsze środowiska.
         </h2>
 
         <p>
@@ -184,11 +215,22 @@
         <span><vk-icon name="map-pin"></vk-icon> Toruń</span>
       </div>
 
+      <div class="role-summary" data-role-summary aria-live="polite">
+        <div>
+          <span data-role-eyebrow>Wybrany profil</span>
+          <strong data-role-title>Pełny profil</strong>
+          <small data-role-desc>Strona pokazuje pełny przekrój doświadczenia.</small>
+        </div>
+        <button class="role-change" type="button" data-role-change>
+          Zmień profil <vk-icon name="arrow-right"></vk-icon>
+        </button>
+      </div>
+
       <div class="actions">
-        <a class="btn"
-   href="CV_Vladyslav_Konohrai.pdf"
+        <a class="btn" data-cv-link
+   href="CV/CV_All_Vladyslav_Konohrai.pdf"
    target="_blank"
-   download="CV_Vladyslav_Konohrai.pdf">
+   download="CV_All_Vladyslav_Konohrai.pdf">
    Pobierz CV <vk-icon name="download"></vk-icon>
 </a>
         <a class="btn secondary" href="mailto:v.konohrai.work@gmail.com">Skontaktuj się <vk-icon name="arrow-right"></vk-icon></a>
@@ -205,10 +247,10 @@
     <div class="photo-wrap">
     <img class="photo" src="photo.png" alt="Vladyslav Konohrai" width="1000" height="1553" fetchpriority="high" decoding="async">
 
-    <div class="orbit-item orbit-1"><vk-icon name="brain"></vk-icon><span>Psychology</span></div>
-    <div class="orbit-item orbit-2"><vk-icon name="users"></vk-icon><span>Leadership</span></div>
-    <div class="orbit-item orbit-3"><vk-icon name="chart"></vk-icon><span>Analysis</span></div>
-    <div class="orbit-item orbit-4"><vk-icon name="shield"></vk-icon><span>Safety</span></div>
+    <div class="orbit-item orbit-1"><vk-icon name="brain"></vk-icon><span>Psychologia</span></div>
+    <div class="orbit-item orbit-2"><vk-icon name="users"></vk-icon><span>Zespół</span></div>
+    <div class="orbit-item orbit-3"><vk-icon name="chart"></vk-icon><span>Analiza</span></div>
+    <div class="orbit-item orbit-4"><vk-icon name="shield"></vk-icon><span>BHP</span></div>
     </div>
 
     <div class="side-info">
@@ -383,68 +425,98 @@
     <div class="section-title">Doświadczenie</div>
 
     <div class="experience">
-      <div class="exp-card">
+      <div class="exp-card" data-experience-key="cook" data-role-match="gastro all">
+        <div class="icon"><vk-icon name="utensils"></vk-icon></div>
+        <h3>Kucharz</h3>
+        <small>MANEKIN Sp. z o.o.</small>
+        <div class="date">04.2026 – obecnie</div>
+        <ul>
+          <li>Przygotowywanie dań zgodnie z recepturami i standardami jakości</li>
+          <li>Obróbka termiczna i smażenie mięsa</li>
+          <li>Przyrządzanie sałatek, burgerów i dań makaronowych</li>
+          <li>Przygotowywanie składników i półproduktów do bieżącej produkcji</li>
+          <li>Organizacja stanowiska pracy i współpraca z zespołem przy realizacji zamówień</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-experience-key="safety" data-role-match="office production all">
         <div class="icon"><vk-icon name="hard-hat"></vk-icon></div>
         <h3>Inspektor ds. BHP</h3>
         <small>SOL-WORK Tetiana Logvyn</small>
         <div class="date">10.2024 – obecnie</div>
         <ul>
-          <li>Dokumentacja BHP</li>
-          <li>Szkolenia pracowników</li>
-          <li>Analiza zagrożeń</li>
-          <li>Wdrażanie procedur</li>
+          <li>Opracowywanie dokumentacji BHP zgodnie z obowiązującymi przepisami</li>
+          <li>Prowadzenie szkoleń wstępnych i okresowych z zakresu BHP</li>
+          <li>Identyfikacja i analiza zagrożeń oraz proponowanie działań korygujących i zapobiegawczych</li>
+          <li>Współpraca z kierownictwem przy wdrażaniu procedur i kultury bezpieczeństwa</li>
+          <li>Monitorowanie przestrzegania przepisów i zasad BHP</li>
         </ul>
       </div>
 
-      <div class="exp-card">
+      <div class="exp-card" data-experience-key="painting" data-role-match="production all">
         <div class="icon"><vk-icon name="paintbrush"></vk-icon></div>
         <h3>Pomocnik lakiernika</h3>
         <small>Palfinger Poland Sp. z o.o.</small>
         <div class="date">06.2022 – 08.2024</div>
         <ul>
-          <li>Przygotowanie i lakierowanie</li>
-          <li>Śrutowanie elementów</li>
-          <li>Organizacja pracy działu</li>
-          <li>Szkolenie pracowników</li>
+          <li>Przygotowywanie maszyn i elementów do lakierowania</li>
+          <li>Samodzielne lakierowanie elementów oraz przygotowywanie i mieszanie farb</li>
+          <li>Śrutowanie elementów metalowych i obsługa obróbki powierzchni</li>
+          <li>Wykonywanie drobnych napraw oraz dbanie o stan techniczny sprzętu</li>
+          <li>Organizacja pracy działu i współpraca z magazynem przy realizacji projektów</li>
+          <li>Szkolenie nowych pracowników i wspieranie zespołu</li>
         </ul>
       </div>
 
-      <div class="exp-card">
+      <div class="exp-card" data-experience-key="restaurant-bydgoszcz" data-role-match="gastro all">
         <div class="icon"><vk-icon name="utensils"></vk-icon></div>
         <h3>Pracownik restauracji</h3>
         <small>Wojciech Szpila Sp. z o.o.</small>
         <div class="date">09.2023 – 12.2023</div>
         <ul>
-          <li>Obsługa klienta</li>
-          <li>Zarządzanie zapasami</li>
-          <li>Praca w kuchni</li>
-          <li>Szkolenie zespołu</li>
+          <li>Pakowanie zamówień i obsługa klientów</li>
+          <li>Rozwiązywanie problemów klientów i wsparcie zespołu w trudnych sytuacjach</li>
+          <li>Utrzymywanie płynności pracy kuchni i kontrola zapasów</li>
+          <li>Obsługa urządzeń i reagowanie na awarie</li>
+          <li>Szkolenie nowych pracowników i wdrażanie ich do zespołu</li>
         </ul>
       </div>
 
-      <div class="exp-card">
+      <div class="exp-card" data-experience-key="restaurant-torun" data-role-match="gastro office all">
         <div class="icon"><vk-icon name="store"></vk-icon></div>
         <h3>Pracownik restauracji</h3>
         <small>Happy Food AWK Sp. z o.o.</small>
         <div class="date">08.2025 – 11.2025</div>
         <ul>
-          <li>Realizacja zamówień</li>
-          <li>Obsługa kasy i klientów</li>
-          <li>Praca pod presją czasu</li>
-          <li>Kontrola jakości</li>
+          <li>Realizacja i pakowanie zamówień</li>
+          <li>Obsługa klientów, kasy i przyjmowanie płatności</li>
+          <li>Przygotowywanie produktów zgodnie ze standardami jakości</li>
+          <li>Zapewnianie ciągłości pracy kuchni</li>
+          <li>Kontrola i uzupełnianie zapasów</li>
         </ul>
       </div>
 
-      <div class="exp-card">
+      <div class="exp-card" data-experience-key="construction" data-role-match="production all">
         <div class="icon"><vk-icon name="hammer"></vk-icon></div>
         <h3>Pomocnik budowlany</h3>
         <small>Ukraina</small>
         <div class="date">04.2019 – 12.2019</div>
         <ul>
-          <li>Prace budowlane</li>
-          <li>Montaż rusztowań</li>
-          <li>Prace żelbetowe</li>
-          <li>Wykończenia wnętrz</li>
+          <li>Transport materiałów i przygotowywanie zapraw budowlanych</li>
+          <li>Montaż rusztowań oraz wsparcie przy budowie ścian</li>
+          <li>Wykonywanie prostych konstrukcji budowlanych na podstawie planów</li>
+          <li>Prace wykończeniowe: ocieplanie, malowanie i struktury dekoracyjne</li>
+        </ul>
+      </div>
+
+      <div class="exp-card" data-experience-key="farm" data-role-match="all">
+        <div class="icon"><vk-icon name="sprout"></vk-icon></div>
+        <h3>Pracownik fizyczny na farmie</h3>
+        <small>Ukraina</small>
+        <div class="date">01.2020 – 04.2020</div>
+        <ul>
+          <li>Wykonywanie prac polowych: sadzenie, pielęgnacja i zbiór plonów</li>
+          <li>Opieka nad zwierzętami i utrzymanie porządku w gospodarstwie</li>
         </ul>
       </div>
     </div>
@@ -489,8 +561,8 @@
       </div>
 
       <div class="lang">
-        <div class="lang-row"><span>Angielski</span><span>A2</span></div>
-        <div class="bar"><div style="width:40%"></div></div>
+        <div class="lang-row"><span>Angielski</span><span>A1</span></div>
+        <div class="bar"><div style="width:25%"></div></div>
       </div>
 
       <div class="lang">
@@ -503,12 +575,12 @@
       <div class="section-title">Osiągnięcia i certyfikaty</div>
 
       <div class="certs">
-        <div class="cert"><vk-icon name="file-check"></vk-icon> Excel for Beginners Certificate</div>
+        <div class="cert"><vk-icon name="file-check"></vk-icon> Excel dla początkujących</div>
         <div class="cert"><vk-icon name="users"></vk-icon> Umiejętności interpersonalne</div>
         <div class="cert"><vk-icon name="target"></vk-icon> Kierowanie zespołem</div>
-        <div class="cert"><vk-icon name="chart"></vk-icon> Stock Investing Course</div>
-        <div class="cert"><vk-icon name="paintbrush"></vk-icon> Photoshop for Beginners</div>
-        <div class="cert"><vk-icon name="sparkles"></vk-icon> Introduction to Figma</div>
+        <div class="cert"><vk-icon name="chart"></vk-icon> Praktyczny kurs inwestowania w akcje</div>
+        <div class="cert"><vk-icon name="paintbrush"></vk-icon> Photoshop dla początkujących</div>
+        <div class="cert"><vk-icon name="sparkles"></vk-icon> Wprowadzenie do Figmy</div>
         <div class="cert"><vk-icon name="award"></vk-icon> Operator wózka widłowego UDT</div>
         <div class="cert"><vk-icon name="navigation"></vk-icon> Pilot BSP A1/A3</div>
         <div class="cert cert-new"><vk-icon name="message"></vk-icon> Polski język migowy A1</div>
@@ -540,7 +612,7 @@
 
     <div class="diploma-info" aria-live="polite" aria-atomic="true">
       <span id="diplomaCount">01 / 09</span>
-      <h3 id="diplomaTitle">Excel for Beginners Certificate</h3>
+      <h3 id="diplomaTitle">Excel dla początkujących</h3>
       <p id="diplomaDesc">Certyfikat ukończenia kursu podstaw Excela.</p>
 
       <a id="diplomaPdf" class="btn" href="dyplomy/ExcelDyp.pdf" target="_blank" rel="noopener">
@@ -550,11 +622,11 @@
   </div>
 
   <div class="diploma-thumbs">
-    <img src="dyplomy/ExcelDyp.jpg" class="active" alt="Excel for Beginners Certificate" loading="lazy" decoding="async">
-    <img src="dyplomy/FigmaDyp.jpg" alt="Introduction to Figma" loading="lazy" decoding="async">
-    <img src="dyplomy/InwestDyp1.jpg" alt="Stock Investing: A Practical Course" loading="lazy" decoding="async">
+    <img src="dyplomy/ExcelDyp.jpg" class="active" alt="Excel dla początkujących" loading="lazy" decoding="async">
+    <img src="dyplomy/FigmaDyp.jpg" alt="Wprowadzenie do Figmy" loading="lazy" decoding="async">
+    <img src="dyplomy/InwestDyp1.jpg" alt="Praktyczny kurs inwestowania w akcje" loading="lazy" decoding="async">
     <img src="dyplomy/MenedzDyp.jpg" alt="Kierowanie zespołem" loading="lazy" decoding="async">
-    <img src="dyplomy/PhotoshopDyp.jpg" alt="Photoshop for Beginners" loading="lazy" decoding="async">
+    <img src="dyplomy/PhotoshopDyp.jpg" alt="Photoshop dla początkujących" loading="lazy" decoding="async">
     <img src="dyplomy/PomocLGBT.jpg" alt="Pomoc osobom LGBT+" loading="lazy" decoding="async">
     <img src="dyplomy/potwierdzenie_zdania_egzaminu_A1A3.jpg" alt="Pilot BSP A1/A3" loading="lazy" decoding="async">
     <img src="dyplomy/UmiejętnościinterpersonalneDyp.jpg" alt="Umiejętności interpersonalne" loading="lazy" decoding="async">
@@ -599,12 +671,13 @@
 </div>
 <div class="floating-actions" aria-label="Szybkie akcje">
   <a href="#contact" aria-label="Kontakt"><vk-icon name="mail"></vk-icon><span>Kontakt</span></a>
-  <a href="CV_Vladyslav_Konohrai.pdf" download="CV_Vladyslav_Konohrai.pdf" aria-label="Pobierz CV"><vk-icon name="download"></vk-icon><span>CV</span></a>
+  <a href="CV/CV_All_Vladyslav_Konohrai.pdf" data-cv-link download="CV_All_Vladyslav_Konohrai.pdf" aria-label="Pobierz CV"><vk-icon name="download"></vk-icon><span>CV</span></a>
   <button type="button" data-scroll-top aria-label="Do góry"><vk-icon name="arrow-up"></vk-icon><span>Góra</span></button>
 </div>
 <script src="assets/js/diplomas-data.js?v=20260630-1" defer></script>
 <script src="assets/js/icons.js?v=20260630-1" defer></script>
 <script src="assets/js/translations.js?v=20260630-5" defer></script>
+<script src="assets/js/job-personalizer.js?v=20260721-1" defer></script>
 <script src="assets/js/mobile-menu.js?v=20260630-1" defer></script>
 <script src="assets/js/diploma-gallery.js?v=20260630-1" defer></script>
 <script src="assets/js/ui-enhancements.js?v=20260630-4" defer></script>

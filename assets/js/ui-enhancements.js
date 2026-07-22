@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const revealTargets = [
     ".hero > div:first-child",
+    ".role-summary",
     ".photo-wrap",
     ".side-info .info-box",
     ".stat",
