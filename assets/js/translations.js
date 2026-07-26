@@ -371,7 +371,35 @@ const setAttr = (selector, attr, value) => {
   }
 };
 
+const isHighlightedCert = (value) => /język migowy|Sign Language|жестовый язык/i.test(String(value));
+
+const renderCertList = (values, useHtml = false) => {
+  const container = getElement(".certs");
+  if (!container) {
+    return false;
+  }
+
+  container.innerHTML = values.map((value) => {
+    const className = `cert${isHighlightedCert(value) ? " cert-new" : ""}`;
+    const content = useHtml ? value : value.replace(/[&<>"']/g, (char) => ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      "\"": "&quot;",
+      "'": "&#39;"
+    })[char]);
+
+    return `<div class="${className}">${content}</div>`;
+  }).join("");
+
+  return true;
+};
+
 const setList = (selector, values, useHtml = false) => {
+  if (selector === ".cert" && renderCertList(values, useHtml)) {
+    return;
+  }
+
   getElements(selector).forEach((element, index) => {
     if (values[index] === undefined) {
       return;

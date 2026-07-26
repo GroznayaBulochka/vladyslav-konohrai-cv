@@ -815,6 +815,7 @@
 
   const updateCerts = (profile) => {
     setText("#education .card:nth-child(3) .section-title", profile.certTitle);
+    const container = document.querySelector(".certs");
 
     if (!profile.certs) {
       document.querySelectorAll(".cert").forEach((element, index) => {
@@ -824,17 +825,13 @@
       return;
     }
 
-    document.querySelectorAll(".cert").forEach((element, index) => {
-      const cert = profile.certs?.[index];
-      if (!cert) {
-        element.hidden = true;
-        return;
-      }
+    if (!container) {
+      return;
+    }
 
-      element.hidden = false;
-      element.className = `cert${cert[2] ? " cert-new" : ""}`;
-      element.innerHTML = `${icon(cert[0])} ${cert[1]}`;
-    });
+    container.innerHTML = profile.certs
+      .map((cert) => `<div class="cert${cert[2] ? " cert-new" : ""}">${icon(cert[0])} ${cert[1]}</div>`)
+      .join("");
   };
 
   const updateDiplomas = (profile) => {
