@@ -42,6 +42,12 @@ window.diplomas = [
     pdf: "dyplomy/potwierdzenie_zdania_egzaminu_A1A3.pdf"
   },
   {
+    title: "YUFE Civic Star",
+    desc: "Certyfikat ukończenia aktywności obywatelskich YUFE Civic Star.",
+    img: "dyplomy/Civicstar.jpg",
+    pdf: "dyplomy/Civicstar.pdf"
+  },
+  {
     title: "Umiejętności interpersonalne",
     desc: "Certyfikat ukończenia kursu z zakresu umiejętności interpersonalnych.",
     img: "dyplomy/UmiejętnościinterpersonalneDyp.jpg",

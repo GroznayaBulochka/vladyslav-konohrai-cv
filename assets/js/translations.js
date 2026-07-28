@@ -289,6 +289,56 @@ translations.ru.diplomas.push([
   "Сертификат, подтверждающий базовое знание польского жестового языка на уровне A1."
 ]);
 
+const addMenuItem = (language, label) => {
+  const menu = translations[language].lists.find(([selector]) => selector === ".menu a");
+  menu?.[1].splice(6, 0, label);
+};
+
+addMenuItem("pl", "Referencje");
+addMenuItem("en", "References");
+addMenuItem("ru", "Рекомендации");
+
+translations.pl.diplomas.splice(7, 0, [
+  "YUFE Civic Star",
+  "Certyfikat ukończenia aktywności obywatelskich YUFE Civic Star."
+]);
+translations.en.diplomas.splice(7, 0, [
+  "YUFE Civic Star",
+  "Certificate confirming completion of YUFE Civic Star civic engagement activities."
+]);
+translations.ru.diplomas.splice(7, 0, [
+  "YUFE Civic Star",
+  "Сертификат о прохождении активностей YUFE Civic Star, связанных с гражданским участием."
+]);
+
+translations.pl.references = [
+  ["Referencja MANEKIN", "List polecający z MANEKIN Sp. z o.o."]
+];
+translations.en.references = [
+  ["MANEKIN reference", "Recommendation letter from MANEKIN Sp. z o.o."]
+];
+translations.ru.references = [
+  ["Рекомендация MANEKIN", "Рекомендательное письмо от MANEKIN Sp. z o.o."]
+];
+
+Object.assign(translations.pl.text, {
+  ".reference-head .section-title": "Referencje",
+  ".reference-head h2": "Listy polecające",
+  ".reference-head p": "Rekomendacje od pracodawców i osób, z którymi współpracowałem."
+});
+
+Object.assign(translations.en.text, {
+  ".reference-head .section-title": "References",
+  ".reference-head h2": "Recommendation letters",
+  ".reference-head p": "Recommendation letters from employers and people I worked with."
+});
+
+Object.assign(translations.ru.text, {
+  ".reference-head .section-title": "Рекомендации",
+  ".reference-head h2": "Рекомендательные письма",
+  ".reference-head p": "Рекомендательные письма от работодателей и людей, с которыми я сотрудничал."
+});
+
 Object.assign(translations.pl.html, {
   ".contact-copy-email": `${icon("copy")}<br><b>Skopiuj e-mail</b><br><small>v.konohrai.work@gmail.com</small>`,
   ".contact-copy-phone": `${icon("copy")}<br><b>Skopiuj telefon</b><br><small>+48 739-64-22-77</small>`,
@@ -447,6 +497,21 @@ window.getLocalizedDiploma = (diploma) => {
 
   return {
     ...diploma,
+    title: localized[0],
+    desc: localized[1]
+  };
+};
+
+window.getLocalizedReference = (reference) => {
+  const index = window.references?.indexOf(reference) ?? -1;
+  const localized = translations[activeLanguage]?.references?.[index];
+
+  if (!localized) {
+    return reference;
+  }
+
+  return {
+    ...reference,
     title: localized[0],
     desc: localized[1]
   };

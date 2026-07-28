@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ".exp-card",
     ".bottom-grid .card",
     ".diploma-section",
+    ".reference-section",
+    ".reference-card",
     ".contact-card",
     ".quote-card"
   ];
@@ -100,7 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
     ".exp-card",
     ".cert",
     ".contact-card",
-    ".diploma-preview"
+    ".diploma-preview",
+    ".reference-card"
   ];
 
   if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {

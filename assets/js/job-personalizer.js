@@ -235,7 +235,7 @@
           diplomaTitle: "Dyplomy i certyfikaty",
           diplomaHeading: "Dokumenty wspierające profil produkcyjny",
           diplomaLead: "W tym wariancie pokazuję certyfikaty powiązane z zarządzaniem zespołem i komunikacją. Uprawnienie UDT jest ujęte w sekcji certyfikatów.",
-          diplomaIndexes: [3, 7],
+          diplomaIndexes: [3, 8],
           quote: "W produkcji liczą się jakość, porządek i bezpieczeństwo. Dobrze zorganizowane stanowisko pomaga zespołowi pracować spokojniej i skuteczniej."
         },
         gastro: {
@@ -297,7 +297,7 @@
           diplomaTitle: "Dyplomy i certyfikaty",
           diplomaHeading: "Dokumenty wspierające profil gastronomiczny",
           diplomaLead: "W tym wariancie pokazuję certyfikaty z komunikacji, pracy z ludźmi i podstaw PJM.",
-          diplomaIndexes: [3, 8, 7],
+          diplomaIndexes: [3, 9, 8],
           quote: "W gastronomii liczy się tempo, ale też spokój. Dobra zmiana działa wtedy, gdy kuchnia, obsługa i komunikacja idą razem."
         },
         office: {
@@ -373,7 +373,7 @@
           diplomaTitle: "Dyplomy i certyfikaty",
           diplomaHeading: "Dokumenty wspierające profil biurowy",
           diplomaLead: "W tym wariancie pokazuję certyfikaty wspierające dokumentację, komunikację i pracę z ludźmi.",
-          diplomaIndexes: [0, 3, 7, 8],
+          diplomaIndexes: [0, 3, 8, 9],
           quote: "W pracy biurowej i BHP największą wartość daje porządek: w dokumentach, procedurach, komunikacji i codziennych priorytetach."
         },
         all: {
@@ -440,7 +440,7 @@
           diplomaTitle: "Dyplomy i certyfikaty",
           diplomaHeading: "Pełna galeria dokumentów",
           diplomaLead: "Pełny wariant pokazuje dostępne dyplomy i zaświadczenia dopasowane do szerokiego profilu zawodowego.",
-          diplomaIndexes: [0, 1, 2, 3, 4, 6, 7, 8],
+          diplomaIndexes: null,
           quote: "Różne środowiska pracy uczą elastyczności. Najważniejsze jest szybko zrozumieć zadanie, ludzi i standardy, a potem działać odpowiedzialnie."
         }
       }
