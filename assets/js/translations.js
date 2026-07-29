@@ -312,13 +312,16 @@ translations.ru.diplomas.splice(7, 0, [
 ]);
 
 translations.pl.references = [
-  ["Referencja MANEKIN", "List polecający z MANEKIN Sp. z o.o."]
+  ["Referencja MANEKIN", "List polecający z restauracji MANEKIN, potwierdzający pracę kuchenną, organizację stanowiska i współpracę z zespołem."],
+  ["Referencja Palfinger Poland", "List polecający za pracę jako pomocnik lakiernika w Palfinger Poland w latach 2022-2024."]
 ];
 translations.en.references = [
-  ["MANEKIN reference", "Recommendation letter from MANEKIN Sp. z o.o."]
+  ["MANEKIN reference", "Recommendation letter from MANEKIN restaurant confirming kitchen work, workstation organization and teamwork."],
+  ["Palfinger Poland reference", "Recommendation letter for work as a painter assistant at Palfinger Poland in 2022-2024."]
 ];
 translations.ru.references = [
-  ["Рекомендация MANEKIN", "Рекомендательное письмо от MANEKIN Sp. z o.o."]
+  ["Рекомендация MANEKIN", "Рекомендательное письмо из ресторана MANEKIN, подтверждающее работу на кухне, организацию рабочего места и командное взаимодействие."],
+  ["Рекомендация Palfinger Poland", "Рекомендательное письмо за работу помощником маляра в Palfinger Poland в 2022-2024 годах."]
 ];
 
 Object.assign(translations.pl.text, {
